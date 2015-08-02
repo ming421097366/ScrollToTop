@@ -1,0 +1,23 @@
+@mixin transform-scale($scale) {	
+	-moz-transform : scale($scale);
+	-webkit-transform : scale($scale);
+	-o-transform : scale($scale);
+	-ms-transform : scale($scale);
+	transform : scale($scale);
+}
+
+@mixin transform-origin($hor,$ver) {
+	-moz-transform-origin : $hor $ver;
+	-webkit-transform-origin : $hor $ver;
+	-o-transform-origin :$hor $ver;
+	-ms-transform-origin :$hor $ver;
+	transform-origin :$hor $ver;
+}
+
+@mixin transition($pro,$dura) {
+	-moz-transition : $pro $dura;
+	-webkit-transition : $pro $dura;
+	-o-transition :$pro $dura;
+	-ms-transition :$pro $dura;
+	transition :$pro $dura;
+}

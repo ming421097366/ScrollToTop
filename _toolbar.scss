@@ -1,0 +1,78 @@
+$toolbar-size : 52px;
+@mixin background-position($left,$top) {
+	background-position: $left $top;
+}
+
+.m-toolbar {
+	position: fixed;	
+	left: 50%;
+	bottom: 100px;
+	width: $toolbar-size;
+	margin-left: -$toolbar-size / 2;
+		
+	.item,.layer {
+		background-image: url("../img/toolbar.png");
+		background-repeat: no-repeat;
+	}
+	.item {
+		position: relative;
+		display: block;
+		width: $toolbar-size;
+		height: $toolbar-size;
+		margin-top: 1px;
+		&:hover {		
+			.layer {
+				opacity: 1;
+				@include transform-scale(1);
+			}
+		}	
+		@include transition(background-position,1s);
+	}
+
+	.item-weixi{
+		@include background-position(0,-798px);
+		&:hover {
+			@include background-position(0,-860px);
+		}
+		.layer {		
+			@include background-position(0,0);
+		}
+	}
+	.item-feedback {
+		@include background-position(0,-425px);
+		&:hover {
+			@include background-position(0,-488px);
+		}
+	}
+	.item-app {
+		@include background-position(0,-549px);
+		&:hover {
+			@include background-position(0,-611px);
+		}
+		.layer {
+			@include background-position(0,-222px);
+		}	
+	}
+	.item-top {
+		@include background-position(0,-673px);
+		&:hover {
+			@include background-position(0,-735px);
+		}
+	}
+	.layer {
+		position: absolute;
+		right: $toolbar-size;
+		bottom: 0;
+		width: 160px;
+		height: 180px;
+		opacity: 0;
+		@include transform-scale(0.01);
+		@include transform-origin(right,bottom);
+		@include transition(all,1s);
+	}
+}
+
+
+
+
+
